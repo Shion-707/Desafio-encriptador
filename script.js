@@ -68,14 +68,10 @@ function controladorContainers(frase){
 
 //Función para el botón copiar
 function copiar(){
-    let inputNuevo = document.createElement("input");
-    inputNuevo.value = textoProcesadoP.innerHTML;
-    document.body.appendChild(inputNuevo);
-    inputNuevo.select();
-    document.execCommand("copy");
-    document.body.removeChild(inputNuevo);
+    navigator.clipboard.writeText(textoProcesadoP.innerHTML);
 }
 
+//Configuraciones iniciales
 displayOff(textoProcesado);
 
 btnEncriptar.onclick = encriptarManejo;
